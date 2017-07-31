@@ -1,0 +1,83 @@
+@charset "gb2312";
+/* CSS Document */
+h1.t_nav span { float: right; color: #999; background:url(../images/5849.png) no-repeat left center; padding-left:20px }
+h1.t_nav span a { margin: 0 5px }
+h1.t_nav { border-bottom: #F1F1F1 1px solid; font-size: 12px; font-weight: normal; line-height: 40px; height: 40px; }
+a.n1, a.n2 { width: 100px; display: block; text-align: center; color: #fff; float: left }
+.n1 { background: #5EA51B; }
+.n2 { background: #8BBF5D; }
+.index_about { float: left; width: 740px; overflow: hidden; background: url(../images/r_line.jpg) repeat-y right; margin: 10px 0 }
+.c_titile { font-size: 22px; margin: 20px 0; text-align: center }
+.box_c { border: #ccc 1px dashed; text-align: center; padding: 5px 0; margin-right: 30px;color: #999;}
+.box_c span { margin: 0 10px; }
+.box_c span a{color: #099;}
+ul.infos { overflow: hidden; margin: 20px 30px 20px 0; line-height: 28px; font-size: 14px; text-indent: 2em; }
+ul.infos p { margin-bottom: 20px }
+ul.infos p img { display: block; margin: auto }
+.keybq { background: url(/ragdollcat/images/6264.png) no-repeat 10px center #F8F8F8; line-height: 30px; height: 30px; padding-left: 40px; border: 1px solid #F0F0F0; margin-right: 20px; }
+.keybq span { color: #32a2d5 }
+.nextinfo { line-height: 24px; }
+.otherlink h2 { border-bottom: #099 2px solid; line-height: 40px; font-size: 12px; font-weight: normal; margin-right: 20px; background:url(/ragdollcat/images/5794.png) 10px center no-repeat; padding-left:40px}
+.otherlink .publish{ margin: 0 0;display: block;width: 97.3%; height:190px;overflow: hidden;padding-top: 10px;padding-bottom: :30px;}
+.otherlink .publish .personimg{display: inline-block;margin-left: 1px;margin-right: 1px;width: 5%;height: 19%;}
+.otherlink .publish .personimg img{width:100%;height: 100%}
+.otherlink ul { margin: 0 0;display: block;width: 97.3%; height:auto;overflow: hidden;padding-top: 10px;padding-bottom: :30px;}
+.otherlink li { line-height: 24px;  display: block; width: 95%;padding-bottom: 13px; margin-bottom: 5px;margin-top: 2px;margin-left: 8px; border-bottom: #E3E3E3 solid 1px;}
+.otherlink li .headimg{display: inline-block;margin-left: 1px;margin-right: 1px;width: 5%;height: 70%;}
+.otherlink li .headimg img{width:100%;height: 100%}
+.otherlink li p{display: inline-block;margin-right: 1px;width: 93%;}
+.otherlink li .name{color:#32a2d5;font-size: 14px;}
+.otherlink li a:hover{ text-decoration:underline}
+.rank li { height: 25px; line-height: 25px; clear: both;  overflow: hidden; padding-left: 15px; background: url(../images/li.jpg) no-repeat left center; }
+.rank { margin: 10px 0 }
+.rank li a { color: #333; }
+.paih { background: url(../images/ph.jpg) no-repeat left 8px; margin: 10px 0 }
+.paih li { line-height: 30px; height: 30px; overflow: hidden; padding-left: 24px; border-bottom: #CCC dotted 1px }
+.news h3, .visitors h3 { font-size: 14px; background: url(../images/r_title_bg.jpg) repeat-x center; }
+.news h3 p, .visitors h3 p { background: #fff; width: 70px }
+.news h3 span { color: #65b020 }
+.news h3.ph span { color: #37ccca; }
+.news h3.links span { color: #F17B6B; }
+.news ul { margin-bottom: 20px }
+.news ul li a:hover { text-decoration: underline }
+.visitors ul, .bdshare_t { margin: 20px 0 }
+.ad { width: 100%; margin: 10px auto; }
+
+/*°´Å¥*/
+.btnreview
+{
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:15px;
+    background:#a1d8f0;
+    background:-moz-linear-gradient(top, #badff3, #7acbed);
+    background:-webkit-gradient(linear, left top, left bottom, from(#badff3), to(#7acbed));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#badff3', EndColorStr='#7acbed')";
+    border:1px solid #7db0cc !important;
+    cursor: pointer;
+    padding:11px 16px;
+    font:bold 11px/14px Verdana, Tahomma, Geneva;
+    text-shadow:rgba(0,0,0,0.2) 0 1px 0px; 
+    color:#fff;
+    -moz-box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    -webkit-box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    margin-top:2px;
+    margin-left:12px;
+    margin-right:3px;
+    float:right;
+	padding:7px 21px;
+}
+
+.btnreview:hover,
+.btnreview:focus,
+.btnreview:active{
+    background:#a1d8f0;
+    background:-moz-linear-gradient(top, #7acbed, #badff3);
+    background:-webkit-gradient(linear, left top, left bottom, from(#7acbed), to(#badff3));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#7acbed', EndColorStr='#badff3')";
+}
+.btnreview:active
+{
+    text-shadow:rgba(0,0,0,0.3) 0 -1px 0px; 
+}

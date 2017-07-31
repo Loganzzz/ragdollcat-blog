@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <context:component-scan base-package="main.com.zhang.blog">
+        	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        </context:component-scan>
+        
+        <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+        
+        <context:property-placeholder location="classpath*:resource/jdbc.properties"/>
+ 		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 			<property name="username" value="${jdbc.username}"></property>
+ 			<property name="driverClassName" value="${jdbc.driverClass}"></property>
+ 			<property name="password" value="${jdbc.password}"></property>
+ 			<property name="url" value="${jdbc.url}"></property>
+ 		</bean>
+ 		
+ 		<!-- hibernate配置 -->
+ 		<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+ 			<property name="dataSource" ref="dataSource"></property>
+ 			<property name="hibernateProperties">
+ 				<props>
+ 					<prop key="hibernateDialet">org.hibernate.dialect.MySQLDialect</prop>
+ 					<prop key="hibernate.hbm2ddl.auto">update</prop>   
+ 					<prop key="hibernate.show_sql">true</prop>
+ 					<prop key="hibernate.format_sql">true</prop>
+ 					 <!-- 使用spring的上下文 -->
+ 					<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop> 
+ 				</props>
+ 			</property>
+ 			<property name="packagesToScan">
+ 				<list>
+ 					<value>main.com.zhang.blog.entity</value>
+ 				</list>
+ 			</property>
+ 		</bean>
+ 		
+ 		<!-- 给dAOImpl注入 -->
+ 		<bean id="dAOImpl" class="main.com.zhang.blog.DAO.impl.DAOImpl">
+ 			<property name="sessionFactory" ref="sessionFactory"></property>
+ 		</bean>
+ 		
+	<!-- 定义事务管理器（声明式的事务） -->    
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">  
+        <property name="sessionFactory" ref="sessionFactory"></property>  
+    </bean>  
+    
+	<!-- 配置事物通知 基于aspectj的事务管理-->
+ 	<tx:advice id="advice">
+ 		<tx:attributes>
+ 		<tx:method name="save*" propagation="REQUIRED"/>
+ 		<tx:method name="find*" propagation="REQUIRED"/>
+ 		<tx:method name="*" propagation="REQUIRED"/>
+ 		</tx:attributes>
+ 	</tx:advice>
+ 	
+ 	<aop:config>
+ 		<aop:pointcut expression="execution(* main.com.zhang.blog.service.*.*(..))" id="servicePointcut"/>
+ 		<aop:advisor advice-ref="advice" pointcut-ref="servicePointcut"/>
+ 	</aop:config>
+
+</beans>

@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+	body{margin: 0;padding: :0}
+	.left { height:2000px;width: 30%; float: left;background: #C0D3F6; margin: auto 0}
+	.right { height: 2000px;width: 69%;float: right;background: #E73033;margin: auto 0;}
+	/*头部header*/
+	.f_l {  float: left;}
+	.f_r { float: right;}
+	header { width: 1000px; margin: 20px auto; overflow: hidden; clear: both; }
+	#topnav { width: 60%; background: #48AE15; height: 46px; line-height: 46px; text-align: center; border-radius: 46px; }
+	#topnav a { display: inline-block; font-size: 18px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; padding: 0 20px; }
+	#topnav ul{ list-style-type: disc;-webkit-margin-before: 0em;  -webkit-margin-after: 0em; -webkit-margin-start: 0px; -webkit-margin-end: 0px;-webkit-padding-start: 0px;}
+	#topnav a:hover { background: #fff; color: #000; }
+	#topnav a { color: #FFF;    text-decoration-line: none; }
+	#topnav_current { background: #F3FF41; }/* 高亮选中颜色 */
+	a#topnav_current { color: #000 }
+	
+	.middle-img {position: absolute;left: 259px;top: 0px;width: 40px;}
+
+	.up-img {position: absolute;top: -40px;left: 261px;width: 40px;}
+
+	.down-img {position: absolute;top: 40px;left: 257px;width: 40px;}
+
+	.left-img {position: absolute;left: 218px;width: 40px;}
+
+	.right-img {position: absolute;left: 300px;width: 40px;}
+	@media screen and (max-width:450px) {
+		.middle-img {position: absolute;left: 259px;top: 0px;width: 40px;display: none;}
+
+		.up-img {position: absolute;top: -40px;left: 261px;width: 40px;display: none;}
+
+		.down-img {position: absolute;top: 40px;left: 257px;width: 40px;display: none;}
+
+		.left-img {position: absolute;left: 218px;width: 40px;display: none;}
+
+		.right-img {position: absolute;left: 300px;width: 40px;display: none;}
+
+		.rotate_jia{display: none;}
+		.rotate_div{display: none;}
+		.rotate_jian{display: none;}
+		
+	}
+	/*底部*/
+	footer { 
+	font-size:13px; 
+	text-align: center; line-height: 40px; border-top: #E8E8E8 1px solid ; width:1000px; margin:auto}
+	footer a{font: 13px "黑体", Arial, Helvetica,sans-serif; color: #756F71;}
+	}
