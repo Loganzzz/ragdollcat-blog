@@ -1,5 +1,5 @@
 # ragdollcat-blog
-独立开发的博客系统
+一个简单的博客系统
 ## 使用后端框架 ##
 + Spring
 + SpringMVC
